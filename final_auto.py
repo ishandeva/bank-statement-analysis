@@ -4,7 +4,7 @@ import json
 import string
 
 def main():
-    dframe = pd.read_excel('bank.xlsx')
+    dframe = pd.read_excel('./Data/bank.xlsx')
 
     unique_accounts = list(dframe["Account No"].unique())
 
@@ -22,7 +22,7 @@ def main():
     for x in unique_list:
         account_list.append(dframe[dframe["Account No"] == x])
 
-    with open('result.json', 'r') as rf:
+    with open('./Data/result.json', 'r') as rf:
         tokens = json.loads(rf.read())
 
     zer = np.zeros((len(dframe),))
